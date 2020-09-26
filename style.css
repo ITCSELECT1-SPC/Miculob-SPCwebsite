@@ -12,42 +12,69 @@ a{
 	color: #fff;
 }
 
+
 .container{
 	width: 100%;
 	margin: auto;
 }
 .image-1{
-	background-image: url(schoolimage.jpg);
+	background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(schoolimage.jpg);
 	height: auto;
-	width: 100%;
-		
+	width: 100%;	
 }
-.menu{
-	text-align: center;
-	padding-top: 30px;
-	width: 100%;
-	height: auto;
-	padding-bottom: 50px;
+.navbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
-
-.menu a{
-	padding: 25px 45px 25px 45px;
+.logo{
+	padding: 0 100px;
+}
+.nav-links{
+	margin: 0;
+	padding: 0;
+	display: flex; 
+	padding-right: 50px;
+}
+.nav-links li{
+	list-style: none;
 	font-size: 35px;
-	color: lavenderblush;
+}
+.nav-links li a{
+	text-decoration: none;
+	padding: 1rem;
+	display: block;
+}
+.toggle-button{
+	position: absolute;
+	top: .75rem;
+	right: 1rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+}
+.toggle-button .bar{
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px; 
 }
 .banner{
 	text-align: center;
 	height: auto;
 	width: 100%; 
 	padding-bottom: 50px;
+	padding-top: 50px;
 }
-.banner h2{
-	color: lavenderblush;
+.banner h1{
+	color: azure;
 	font-size: 125px;
 	padding-bottom: 20px;
 }
 .banner p{
-	color: lavenderblush;
+	color: azure;
 	font-size: 25px;
 	margin-left: 20%;
 	margin-right: 20%;
@@ -80,7 +107,7 @@ a{
 	padding-top: 20px;
 
 }
-.col-1 h1{
+.col-1 h2{
 	color: slategrey;
 	text-align: center;
 	font-size: 75px;
@@ -95,9 +122,9 @@ a{
 	font-size: 23px;
 }
 .col-2{
-	background-color: silver;
+	background-color: linen;
 	width: 100%;
-	height: 600px;
+	height: auto;
 	padding-bottom: 50px;
 	text-align: center;
 	padding-left: 12%;
@@ -105,11 +132,14 @@ a{
 }
 
 .col-2 h2{
-	padding-right: 84%;
 	padding-bottom: 3%;
 	padding-top: 2%;
 	color: black;
 	font-size: 45px;
+	text-align: left;
+}
+.container-1{
+	margin-bottom: 25%;
 }
 
 .image-2{
@@ -119,26 +149,51 @@ a{
   	width: 350px;
   	float: left;
   	margin-left: 1%; 
+  	cursor: pointer;
 
+}
+.container-1 h3, .word-2{
+	font-size: 25px;
+	
+}
+.maroon-bg{
+	background-color: maroon; 
+}
+.align-center{
+	text-align:center;
+}
+.container-1 p{
+	font-size: 20px;
+	text-align: left;
 }
 .image-2 img{
 	width: 100%;
 	height: 250px;
 }
 .image-2:hover{
-	border:2px solid #777;
+	border:2px solid white;
 }
-.word-1{
-	text-align: center;
-	padding-bottom: 30%;
+
+.word-2{
 	font-size: 25px;
 }
+.word-2 h3 {
+	text-align: center;
+}
+.word-2 p{
+	padding-bottom: 20px;
+	padding-left: 25px;
+}
+.word-1 p{
+	padding-bottom: 51.5px;
+	padding-left: 25px;
+}
+
 .spec-box{
-	background-color: silver;
+	background-color: linen;
 	width: 100%;
 	height: 100px;
 	text-align: center;
-	padding-top: 25px;
 
 }
 .spec-box a{
@@ -169,53 +224,94 @@ a{
 	margin-left: 7%;
 }
 .box-3{
+	position: relative;
 	background-color: whitesmoke;
 	width: 100%;
 }
-.box-3 p{
-	border: 1px solid violet;
-	padding: 25px dotted black;
+
+.box-3 .imp1{
 	position: absolute;
-	
+	margin-left:8.3%;
+}
+.box-3 .imp2{
+	position: absolute;
+	margin-left:9%;
+	margin-top: 3%;
+}
+.box-3 .imp3{
+	position: absolute;
+	margin-left:8.3%;
+	margin-top: 10%;
+}
+.box-3 .imp4{
+	position: absolute;
+	margin-left:9%;
+	margin-top: 13%;
+}
+.imp1{
+	font-size: 30px;
+	font-weight: bold;
+}
+.imp2{
+	font-size: 25px;
+}
+.imp3{
+	font-size: 30px;
+	font-weight: bold;
+}
+.imp4{
+	font-size: 25px;
 }
 
-.col-4{
+.wrappers{
 	background-image: url(library.jpg);
-	filter:drop-shadow(8px 8px 10px gray);
-	width: 100%;
-	height: auto;
-	padding-bottom: 30px;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding:40px 20px;
 }
-.col-4 table{
-	color: #fff;
+.col-4{
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
 }
+.wrappers .col-4{
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(4, 1fr);
+}
+.wrappers i{
+	margin-bottom: 5px;
+	font-size: 50px;
+	color: honeydew;
+}
+.wrappers .wrapper{
+	font-size: 50px;
+	margin: 10px 0;
 
-.col-4 th{
-	text-align: left;
 }
-.table-2{
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 20px;
+.col-4 span{
+	color:honeydew;
+	padding-left: 20px;
 }
-.table-2 td,th{
-	padding: 0px 150px;
-	font-size: 35px;
-
+.col-4 h3{
+	font-size: 50px;
+	padding-bottom: 50px;
+	color: honeydew;
 }
 .col-5{
-	background-color: mintcream;
+	background-color: whitesmoke;
 	width: 100%;
 	height: auto;
 	padding-bottom: 50px;
-	text-align: center;
+	height: ;
 
 }
 .col-5 h2{
 	padding-top: 2%;
 	font-size: 50px;
 	padding-bottom: 1%;
+	text-align: center;
 }
 .col-5 a{
 	color: white;
@@ -229,16 +325,128 @@ a{
 .col-5 a:hover{
 	background-color: brown;
 }
+.first-set-blog{
+	width: 100%;
+	margin-top: 1%;
+	margin-bottom: 48%;
+	position: relative;
+
+}
+
+.first-set-blog h3{
+	font-size: 40px;
+	text-align: center;
+	background: maroon;
+	color: white;
+}
+.first-set-blog span{
+	font-size: 20px;
+}
+.blog-1{
+	width: 42%;
+	margin-left: 18%;
+	margin-bottom: 25px;
+	height: auto;
+  	background-color: white;
+  	cursor: pointer;
+  	position: absolute;
+  	font-size: 22px;
+  	border: 2px solid silver;
+  	padding: 25px;
+}
+.first-set-blog p{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: left;
+}
+.blog-1:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-2{
+	width: 20%;
+	position: absolute;
+	left: 61.5%; 
+	height: auto;
+  	background-color: white;
+  	cursor: pointer;
+  	text-align: left;
+  	border: 2px solid silver;
+  	padding: 15px 25px 0px 25px;
+
+}
+
+.blog-2:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-3{
+	width: 20%;
+	position: absolute;
+	left: 18%; 
+	margin-top: 23%;
+	height: auto;
+  	background-color: white;
+  	cursor: pointer;
+  	margin-bottom: 25px;
+  	padding: 25px;
+  	font-size: 22px;
+  	border: 2px solid silver;
+}
+.blog-3:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-4{
+	width: 20%;
+	position: absolute;
+	left: 40%; 
+	margin-top: 23%;
+	height: auto;
+  	background-color: white;
+  	cursor: pointer;
+  	background-color: violet;
+  	text-align: left;
+  	padding:25px;
+
+}
+.blog-4 p{
+	font-size: 22px;
+}
+
+.blog-4:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.blog-5{
+	width: 20%;
+	position: absolute;
+	left: 61.5%; 
+	margin-top: 23%;
+	height: auto;
+  	background-color: white;
+  	cursor: pointer;
+  	margin-bottom: 25px;
+  	padding: 25px; 
+  	border: 2px solid silver;
+}
+.blog-5 p{
+	font-size: 22px;
+}
+.blog-5:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .my-footer{
-	background-color: darkslategrey;
+	background-color: maroon;
 	width: 100%;
 	height: auto;
 	padding-bottom: 50px;
-	text-align: center;
 	padding-top: 25px; 
 }
 .my-footer h2{
 	font-size: 40px;
+	color: white;
+
 }
 .my-footer input{
 	border-radius: 5px;
@@ -251,17 +459,1037 @@ a{
 	border: 3px solid black;
 }
 .my-footer input[type="email"], .my-footer textarea{
-	max-width: 100%; 
+	width: 40%; 
+	padding: 20px 30px;
+}
+.my-footer input[type="email"]:focus, textarea:focus, select:focus{
+    outline: none;
 }
 .box-2 {
-	padding: 0 20%;
+	padding: 0 15%;
 	width: auto;
+	text-align: center;
 }
 .box-2 button{
 	border: 1px solid moccasin;
-	padding: 15px;
+	padding: 20px;
 	background-color: moccasin;
 	margin-left: 5px;
 	border-radius: 5px;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	cursor: pointer;
+	font-size: 15px;
 }
+
+.container-2 {
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+
+.box{
+	position: absolute;
+	width: 25%;
+}
+.nav-1{
+	position: absolute;
+	z-index: 1;
+	margin-top: 55%;
+	right: 45%;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+.box img{
+	padding-left: 10%;
+	padding-top: 20%;
+}
+
+.pos-center1{
+	width: 25%;
+	position: absolute;
+	font-size: 35px;
+	color: #fff;
+	left: 15%;
+	top: 10%;
+}
+.pos-center1 h4{
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.nav-2{
+	display: grid;
+	text-align: left;
+	margin-left: 20%;
+	color: azure;
+	padding-top: 5%;
+}
+.pos-center1 a{
+	font-size: 25px;
+	cursor: pointer;
+}
+.pos-center1 a:hover{
+	color: antiquewhite;
+}
+
+.pos-center2{
+	width: 25%;
+	position: absolute;
+	color: #fff;
+	left: 40%;
+	top:10%;
+
+}
+.pos-center2 h4{
+	font-size: 40px;
+	font-weight: bold;	
+}
+.tweets a{
+	font-size: 25px;
+	padding-right: 20%;
+}
+.tweets a:hover{
+	color: antiquewhite;
+}
+
+.pos-right{
+	position: absolute;
+	padding-left: 65%;
+	color: #fff;
+	top: 10%;
+}
+.pos-right h4{
+	font-size: 40px;
+	font-weight: bold;
+}
+.contact{
+	font-size: 25px;
+	padding-left: 75px;
+}
+.contact p{
+	text-align: left;
+}
+
+/* learn more CSS */
+.lm-wrapper{
+	width: 100%;
+	height: auto;
+	background-color: azure;
+}
+.lm-wrapper h2{
+	font-size: 50px;
+	padding-top: 50px;
+	text-align: center;
+}
+.lm-wrapper p{
+	font-size: 18px;
+	padding: 25px 200px;
+	text-align: justify;
+
+}
+.lm-wrapper1{
+	background-color: linen;
+
+}
+.lm-wrapper1 h2{
+	font-size: 40px;
+	padding-top: 50px;
+	text-align: center;
+}
+.lm-wrapper1 img{
+	padding-left: 550px;
+	padding-top: 50px;
+}
+.lm-wrapper1 p{
+	text-align: center;
+	font-size: 30px;
+	padding-bottom: 100px;
+}
+
+/*Contact CSS*/
+.c-wrapper{
+	background-color: azure;
+	width: 100%;
+	position: relative;
+}
+.c-box{
+	text-align: center;
+	padding-bottom: 50px;
+}
+.c-wrapper h3{
+	font-size: 40px;
+	padding-top: 50px;
+	text-align: center;
+}
+.info-1{
+	display: grid;
+	width: 30%;
+	margin-left: 400px;
+	background-color: linen;
+	padding: 30px 50px 30px 50px; 
+	margin-top: 30px;
+
+}
+.info-1 h4{
+	font-size: 30px;
+	text-align: left;
+}
+.info-1 input{
+	margin-top: 25px;
+
+}
+.info-1 input[type="text"], .info-1 textarea{
+	height: 40px;
+	padding-left: 10px;
+	border: 1px solid linen;
+	border-radius: 3px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.info-1 input[type="text"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.info-1 textarea[type="text"], .info-1 textarea{
+	height: 40px;
+	padding-left: 10px;
+	border: 1px solid linen;
+	border-radius: 3px;
+	font-size: 15px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	margin-top: 25px;
+	height: 100px;
+}
+.info-1 button{
+	width: 30%;
+	padding: 15px 25px 15px 25px;
+	margin-top: 25px;
+	font-size: 20px;
+	background-color: linen;
+	border: 4px solid white;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.info-1 button:hover{
+	background-color: azure;
+}
+.info-2{
+	position: absolute;
+	bottom:50px;
+	left:970px;
+	background-color: linen;
+	padding: 22px 300px 75px 100px;
+}
+.info-2 h4{
+	font-size: 30px;
+}
+.info-2 h5{
+	font-size: 20px;
+}
+
+
+/*About*/
+.ab-wrapper{
+	background-color: floralwhite;
+	width: 100%;
+	padding-left: 150px;
+	padding-right: 150px;
+	text-align: justify;
+	padding-bottom: 100px;
+	
+}
+.ab-wrapper h3{
+	font-size: 50px;
+	padding-top: 40px;
+
+}
+.ab-box h4{
+	font-size: 40px;
+	padding-top: 25px;
+	text-align: center;
+}
+.ab-box p{
+	font-size: 20px;
+	padding-top: 25px;
+}
+.mid{
+	text-align: center;
+}
+
+/* ACADEMICS */
+.ac-wrapper{
+	background-color: mintcream;
+	padding-left: 150px;
+	padding-right: 150px;
+	position: relative;
+	padding-bottom: 40px;
+	padding-top: 25px;
+
+}
+.ac-wrapper h4{
+	text-align: center;
+	margin-top: 50px;
+	font-size: 50px;
+	margin-bottom: 25px;
+}
+.ac-wrapper1 h3{
+	font-size: 50px;
+	text-align: center;
+	padding-top: 20px;	
+	padding-bottom: 50px;
+
+}
+.ac-wrapper1 {
+	border: 2px solid black;
+	padding-top: 25px;
+
+}
+.ac-wrapper span{
+	padding-left: 100px;
+}
+.ac-wrapper1 p{
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 22px;
+	padding: 25px 50px;
+}
+.ac-box1{
+	padding-left: 200px;
+	padding-bottom: 50px;
+	background-color: lavender;
+	padding-top: 50px;
+}
+.ac-box1 label{
+	font-size: 25px;
+	margin-right: 100px;
+	display: grid;
+
+}
+.ac-box1 input[type="text"], .ac-box1 textarea{
+	padding:10px 0 10px 10px;
+	font-size: 20px;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border: 3px solid grey;
+	border-radius: 3px;
+	width: 35%;
+	margin-bottom: 15px;
+}
+.ac-box1 input[type="text"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.ac-box1 input[type="text"]:focus{
+	border: 3px solid lightblue;
+}
+.ac-box1 input[type="email"], .ac-box1 textarea{
+	padding: 10px 0 10px 10px;
+	font-size: 20px;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border: 3px solid grey;
+	border-radius: 3px;
+	width: 35%;
+	margin-bottom: 15px;
+}
+.ac-box1 input[type="email"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.ac-box1 input[type="email"]:focus{
+	border: 3px solid lightblue;
+}
+.ac-box1 input[type="date"], .ac-box1 textarea{
+	padding: 10px 0 10px 10px;
+	font-size: 20px;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border: 3px solid grey;
+	border-radius: 3px;
+	width: 35%;
+	margin-bottom: 15px;
+}
+.ac-box1 input[type="date"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.ac-box1 input[type="date"]:focus{
+	border: 3px solid lightblue;
+}
+.ac-box1 select{
+	font-size: 20px;
+	padding: 10px 0 10px 10px;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border: 3px solid grey;
+	border-radius: 3px;
+	width: 35%;
+	margin-bottom: 15px;
+}
+.ac-box1 select:focus{
+	border: 3px solid lightblue;
+}
+.ac-box1 button{
+	width: 10%;
+	padding: 15px 25px 15px 25px;
+	margin-top: 25px;
+	font-size: 20px;
+	background-color: lavender;
+	border: 4px solid silver;
+	border-radius: 4px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	margin-left: 500px;
+	margin-bottom: 2.5%;
+	cursor: pointer;
+}
+.ac-wrapper button:focus{
+	background-color: azure;
+	outline: none;
+}
+.ac-box2{
+	position: absolute;
+	bottom: 315px;
+	left: 1000px;
+	display: grid;
+}
+.ac-box2 label{
+	font-size:25px;
+}
+.ac-box2 input[type="text"], .ac-box2 textarea{
+	padding:10px 0 10px 10px;
+	font-size: 20px;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border: 3px solid grey;
+	border-radius: 3px;
+	width: 180%;
+	margin-bottom: 15px;
+}
+.ac-box2 textarea{
+	height: 300px;
+}
+.ac-box2 textarea:focus{
+	border: 3px solid lightblue;
+}
+.ac-box2 input[type="text"]:focus{
+	border: 3px solid lightblue;
+}
+
+.ac-box2 input[type="text"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+/* COURSE */
+.course-wrapper{
+	background-color: azure;
+	width: 100%;
+}
+.course-box{
+	padding: 25px 100px;
+}
+.course-box h1{
+	font-size: 50px;
+}
+.cbox-1{
+	border:3px solid silver;
+	margin-top: 25px;
+	padding: 25px;
+	background-color: mintcream;
+}
+.cbox-1 h2{
+	font-size: 30px;
+}
+.cbox-1 p{
+	padding-top: 15px;
+	font-size: 20px;
+	text-align: justify;
+}
+.cbox-1 button{
+	padding: 15px;
+	margin-top: 15px;
+	font-size: 20px;
+	background-color: linen; 
+	border: 1px solid linen;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	cursor: pointer; 
+}
+.cbox-1 a{
+	color: black;
+}
+.cbox-1 button:active{
+	background-color: azure;
+	outline: none;
+}
+
+.coursebox1{
+	width: 100%;
+	padding-bottom: 50px;
+	position: relative;
+}
+.coursebox1 h1{
+	font-size: 50px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+.coursebox-1{
+	margin-left: 200px;
+}
+.coursebox-1 h2{
+	font-size: 40px;
+	text-align: center;
+}
+.coursebox-1{
+	display: grid;
+	width: 35%;
+	background-color:cornsilk;
+	padding: 50px 50px;
+
+}
+.coursebox-1 label{
+	font-size: 25px;
+}
+.coursebox-1 input[type="text"], .coursebox-1 textarea{
+	font-size: 20px;
+	padding: 10px;
+	border: 1px solid white;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.coursebox-1 input[type="text"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.coursebox-1 input[type="date"], .coursebox-1 textarea{
+	font-size: 20px;
+	padding: 10px;
+	border: 1px solid white;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.coursebox-1 input[type="date"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.coursebox-1 input[type="email"], .coursebox-1 textarea{
+	font-size: 20px;
+	padding: 10px;
+	border: 1px solid white;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.coursebox-1 input[type="email"]:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.coursebox-1 select{
+	font-size: 20px;
+	padding: 10px;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border: 1px solid white;
+}
+.coursebox-1 button{
+	margin-top: 25px;
+	width: 25%;
+	padding: 15px;
+	cursor: pointer;
+	margin-left: 200px;
+	background-color: cornsilk;
+	border: 3px solid white;
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 20px;
+}
+.coursebox-1 button:focus{
+	outline: none;
+	border: 3px solid white;
+	background-color: azure;
+
+}
+.coursebox-2{
+	position: absolute;
+	bottom: 550px;
+	left: 1100px;
+	width: 30%;
+	border: 2px solid lavender;
+	padding: 30px; 
+	background-color: lavender;
+}
+.coursebox-2 h2{
+	font-size: 40px;
+	padding-bottom: 50px;
+}
+.coursebox-2 p{
+	font-size: 20px;
+}
+.coursebox1 img{
+	position: absolute;
+	width: 20%;
+	bottom: 150px;
+	left: 1200px;
+}
+
+
+/* MOBILE */
+/* IPHONES */
+@media only screen and (max-width: 479px){
+	.toggle-button{
+		top: 50px;
+		display: flex;
+	}
+	.nav-links{
+		display: none;
+		width: 100%;
+		flex-direction: column;
+		padding-left: 70px;
+	}
+	.logo{
+		padding: 10px 0 0 25px;
+	}
+
+	.nav-links li{
+		text-align: center;
+		padding: 15px 25px;
+		font-size: 25px;
+	}
+	.nav-links.active{
+		display: flex;
+	}
+	.navbar{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.banner h1{
+		font-size: 50px;
+	}
+	.banner p{
+		font-size: 20px;
+	}
+	.box-1 {
+		margin-top: 40px;
+		
+	}
+	.box-1 a{
+		font-size: 15px;
+	}
+	.col-1 h2{
+		font-size: 50px;
+	}
+	.col-1 p{
+		font-size: 20px;
+	}
+	.col-2{
+		padding-bottom: 1600px;
+	}
+	.col-2 h2{
+		font-size: 40px;
+		padding-right: 0;
+	}
+	.image-2{
+		margin-bottom: 25px;
+	}
+	.spec-box a{
+		font-size: 15px;
+	}
+	.col-3{
+		padding-bottom: 200px;
+		position: relative;
+	}
+	.col-3 h2{
+		font-size: 40px;
+		position: relative;
+		padding-bottom: 250px;
+		display: grid;
+	}
+	.box-3 img{
+		position: absolute;
+		bottom: 420px; 
+		width:75%;
+	}
+	.imp1{
+		position: absolute;
+		bottom: 200px;
+		left:80px;
+		font-size: 25px;
+	}
+	.imp2{
+		bottom: 150px;
+		font-size: 20px;
+		left: 100px;
+	}
+	.imp3{
+		position: absolute;
+		bottom: 20px;
+		left: 80px;
+		font-size: 25px;
+	}
+	.imp4{
+		bottom: -15px;
+		font-size: 20px;
+		left: 100px;
+	}
+	.col-4{
+		padding-bottom: 800px;
+		position: relative;
+		width: 100%;
+	}
+	.sec-1{
+		position: absolute;
+		left: 150px;
+	}
+	.sec-1 h3{
+		font-size: 40px;
+	}
+	.sec-2{
+		position: absolute;
+		top: 175px;
+		left: 150px;
+	}
+	.sec-2 h3{
+		font-size: 40px;
+	}
+	.sec-3{
+		position: absolute;
+		top: 350px;
+		left: 150px;
+	}
+	.sec-3 h3{
+		font-size: 40px;
+	}
+	.sec-4{
+		position: absolute;
+		top: 550px;
+		left: 150px;
+	}
+	.sec-4 h3{
+		font-size: 40px;
+
+	}
+	.col-5{
+		padding-bottom: 2300px;
+		position: relative;
+	}
+	.col-5 h2{
+		font-size: 40px;
+		padding-bottom: 50px;
+		padding-top: 50px;
+	}
+	.first-set-blog{
+		position: relative;
+	}
+	.blog-1{
+		position: absolute;
+		width: 80%;
+		right: 50px;
+	}
+	.blog-2{
+		position: absolute;
+		top: 550px;
+		width: 80%;
+		left: 45px;
+	}
+	.blog-3{
+		position: absolute;
+		top: 1000px;
+		width: 80%;
+		left: 45px;
+	}
+	.blog-4{
+		position: absolute;
+		top: 1400px;
+		width: 80%;
+		left: 45px;
+	}
+	.blog-5{
+		position: absolute;
+		top: 2000px;
+		width: 80%;
+		left: 45px;
+	}
+	.my-footer input[type="email"], .my-footer textarea{
+		width: 60%; 
+	}	
+	.box-2{
+		width: 100%;
+		padding-bottom: 1500px;
+		position: relative;
+	}
+	.container-2{
+		width: 100%;
+		position: relative;
+		height: auto;
+	}
+	.box{
+		width: 100%;
+		position: absolute;
+		left: 20%;
+	}
+	.nav-1{
+		top: 10px;
+	}
+	.pos-center1{
+		width: 100%;
+		position: absolute;
+		top: 300px;
+		left: -20%;
+	}
+	.nav-2{
+		padding-top: 25px;
+	}
+	.pos-center2{
+		width: 100%;
+		position: absolute;
+		top: 600px;
+		left: -15%;
+	}
+	.tweets{
+		padding-top: 25px;
+	}
+	.pos-right{
+		width: 100%;
+		position: absolute;
+		top: 850px;
+		right: 220px;
+	}
+	.contact{
+		position: absolute;
+		padding-top: 25px;
+		right: -150px;
+	}
+	.contact p{
+		font-size: 25px;
+	}
+
+	/*learn more*/
+	.lm-wrapper{
+		position: relative;
+		width: 100%;
+		padding: 0 0 50px 0;
+		margin: 0;
+	}
+	.lm-wrapper h2{
+		font-size: 40px;
+	}
+	.lm-wrapper p{
+		padding: 20px 25px;
+	}
+	.lm-wrapper1{
+		position: relative;
+	}
+	.lm-wrapper1 h2{
+		padding-bottom: 420px;
+	}
+	.lm-wrapper1 img{
+		position: absolute;
+		right: -170px;
+		bottom: 90px;
+	}
+	.lm-wrapper1 p{
+		padding: 10px 0;
+	}
+	/*Admission*/
+	.ac-wrapper{
+		position: relative;
+		font-size: 10px;
+		height: 2450px;
+	}
+	.ac-wrapper1{
+		position: absolute;
+		width: 90%;
+		right: 25px;
+		top: 25px;
+		padding:0;
+
+	}
+	.ac-wrapper h3{
+		font-size: 30px;
+		
+	}
+	.ac-wrapper1 p{
+		font-size: 15px;
+		text-align: left;
+		text-align: justify;
+
+	}
+	.ac-wrapper label{
+		font-size: 25px;
+	}
+	.ac-wrapper h4{
+		top: 700px;
+		left: 50px;
+		position: absolute;
+		font-size: 40px;
+		padding-top: 5px;
+	}
+	.ac-box1{
+		position: absolute;
+		top:850px;
+		width: 90%;
+		right: 25px;
+		padding: 35px 15px 800px 15px;
+	}
+	.ac-box1 input[type="text"]{
+		padding: 5px;
+	}
+	.ac-box1 input[type="text"], .ac-box2 textarea{
+		width: 100%;
+	}
+	.ac-box1 input[type="email"], .ac-box2 textarea{
+		width: 100%;
+	}
+	.ac-box1 input[type="email"]{
+		padding: 5px;
+	}
+	.ac-box1 input[type="date"], .ac-box2 textarea{
+		width: 100%;
+	}
+	.ac-box1 input[type="date"]{
+		padding: 5px;
+	}
+	.ac-box1 select{
+		width: 100%;
+		padding: 5px;
+	}
+	.ac-box1 button{
+		position: absolute;
+		top: 1350px;
+		right: 110px;
+		width: 50%;
+	}
+	.ac-box2{
+		position: absolute;
+		bottom:250px;
+		width: 53%;
+		left: 20px;
+		padding: 35px 12px 0px 20px;
+	}
+	.ac-box2 input[type="text"]{
+		padding: 5px;
+	}
+	.ac-box2 textarea{
+		width:180%;
+	}
+	/* ABOUT */
+	.ab-wrapper{
+		position: relative;
+		width: 100%;
+		text-align: left;
+		padding: 0 0 50px 0;
+
+	}
+	.ab-wrapper h3{
+		font-size: 40px;
+		padding-bottom: 25px;
+	}
+	.ab-wrapper p{
+		font-size: 20px;
+	}
+	.ab-box h4{
+		font-size: 30px;
+		margin-top: 50px;
+	}
+	.ab-box{
+		padding: 0 25px;
+	}
+	.c-wrapper{
+		position: relative;
+		padding: 0;
+		margin:0; 
+		width: 100%;
+		padding-bottom: 1100px;
+	}
+	.c-wrapper h3 {
+		margin-bottom: 50px;
+	}
+	.c-box{
+		margin:0;
+		position: absolute;
+		left: 20px;
+		width:100%;
+	}
+	.info-1{
+		margin: 0;
+		padding: 15px 25px;
+		width: 440px;
+	}
+	.info-1 button{
+		position: absolute;
+		top: 900px;
+		z-index: 1;
+		left: 150px;
+	}
+	.info-2{
+		margin: 0;
+		padding: 15px 25px 250px 25px;
+		width: 440px;
+		left: 20px;
+		bottom: 16px;
+	}
+	/*COURSES*/
+	.course-wrapper{
+		position: relative;
+		width: 100%;
+		margin: 0;
+		height: auto; 
+	}
+	.course-box{
+		margin: 0;
+		padding: 0 15px 25px 15px;
+	}
+	.course-wrapper h1{
+		font-size: 40px;
+		padding-top: 25px;
+	}
+	/*Inner course*/
+	.coursebox1{
+		position: relative;
+		width: 100%;
+		padding:0;
+		margin: 0; 
+		height: 2000px;
+	}
+	.coursebox1 h1{
+		font-size: 40px;
+		text-align: left;
+	}
+	.coursebox-1 h2{
+		font-size:30px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	.coursebox-1{
+		position: absolute;
+		margin: 0;
+		padding: 0 15px 100px 15px;
+		width: 100%;
+		top: 650px;
+	}
+	.coursebox-1 input[type="text"]{
+		padding: 5px;
+		margin-bottom: 25px;
+	}
+	.coursebox-1 input[type="date"]{
+		padding: 5px;
+		margin-bottom: 25px;
+	}
+	.coursebox-1 input[type="email"]{
+		padding: 5px;
+		margin-bottom: 25px;
+	}
+	.coursebox-1 select{
+		padding: 5px;
+		margin-bottom: 25px;
+	}
+	.coursebox-1 button{
+		position: absolute;
+		top: 920px;
+		left: -30px;
+	}
+	.coursebox-2{
+		position: absolute;
+		left: 0.5px;
+		padding: 0 15px 15px 15px;
+		margin: 0;
+		width: 100%;
+		bottom: 1400px;
+	}
+	.coursebox-2 h2{
+		font-size: 30px;
+		padding-top:25px;
+	}
+	.coursebox1 img{
+		position: absolute;
+		left: 150px;
+		width: 200px;
+		bottom: 75px;
+	}
+	.image-3{
+		position: absolute;
+		width: 200px;
+		right: 500px;
+	}
+
+}
+
